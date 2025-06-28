@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +11,7 @@ export class LoginFormComponent implements OnInit {
 
    loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private dataService: DataService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -23,7 +24,14 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Login Data:', this.loginForm.value);
-      // Call your API here
+      const { email, password } = this.loginForm.value;
+      this.dataService.onLogin(email, password).subscribe(users => {
+        if (users.length > 0) {
+          alert('Login successful!');
+        } else {
+          //this.error = 'Invalid email or password';
+        }
+      });
     }
   }
 

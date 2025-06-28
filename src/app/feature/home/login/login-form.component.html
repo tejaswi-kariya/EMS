@@ -1,54 +1,52 @@
 <div class="bg-image">
     <div class="overlay">
-    <div fxLayout="row" fxLayoutAlign="center center" class="container">
+        <div fxLayout="row" fxLayoutAlign="center center" class="container">
 
-        <!-- Left Column -->
-        <div fxFlex="50" class="left-side">
-            <h1>Event Management</h1>
-            <p>Some description</p>
-        </div>
+            <!-- Left Column -->
+            <div fxFlex="50" class="left-side">
+                <h1>Event Management</h1>
+                <p>Some description</p>
+            </div>
 
-        <div fxFlex="30" class="right-side">
-            <mat-card>
+            <div fxFlex="30" class="l-container">
+                <mat-card class="l-card">
+                    <!-- <div class="l-container"> -->
+                    <mat-card-title>Login</mat-card-title>
+                    <mat-card-content>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="40px">
+                            <!-- <div class="form-group"> -->
+                            <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" formControlName="email">
 
-                <mat-card-title>Login</mat-card-title>
-                <!-- <div class="container"> -->
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="16px">
-                    <!-- <div class="form-group"> -->
-                    <mat-form-field appearance="fill">
-                        <mat-label>Email</mat-label>
-                        <input matInput type="email" formControlName="email">
+                                <small class="form-text text-muted"
+                                    *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+                                    Please enter email address.
+                                </small>
 
-                        <small class="form-text text-muted"
-                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
-                            Please enter email address.
-                        </small>
+                                <mat-error *ngIf="loginForm.get('email').invalid">Please enter valid email
+                                    address</mat-error>
+                            </mat-form-field>
 
-                        <small class="form-text text-muted"
-                            *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
-                            Please enter valid email address
-                        </small>
+                            <!-- <div class="form-group"> -->
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput type="password" formControlName="password">
+                                <small class="form-text text-muted"
+                                    *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+                                    Password is required.
+                                </small>
+                            </mat-form-field>
+                            <!-- </div> -->
+                            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+                                Login
+                            </button>
 
-                    </mat-form-field>
+                        </form>
+                    </mat-card-content>
                     <!-- </div> -->
-
-                    <div class="form-group">
-                        <mat-form-field>
-                            <mat-label>Password</mat-label>
-                            <input matInput type="password" formControlName="password">
-                            <small class="form-text text-muted" *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
-                                Password is required.
-                            </small>
-                        </mat-form-field>
-                    </div>
-                    <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
-                        Login
-                    </button>
-
-                </form>
-                <!-- </div> -->
-            </mat-card>
+                </mat-card>
+            </div>
         </div>
-    </div>
     </div>
 </div>
