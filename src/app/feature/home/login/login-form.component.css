@@ -44,3 +44,15 @@
 mat-form-field {
   margin-bottom: 50px; /* Adds gap below each field */
 }
+
+.center-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.l-description {
+  text-align: justify;
+  padding-right: 5%;
+}
