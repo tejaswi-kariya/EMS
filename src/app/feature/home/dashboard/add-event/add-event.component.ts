@@ -16,30 +16,49 @@ export class AddEventComponent implements OnInit {
     private dialogRef: MatDialogRef<AddEventComponent>,
     @Inject(MAT_DIALOG_DATA) public dialogData: any,
     private dataService: DataService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe //private eventData:any
   ) {}
 
   ngOnInit() {
     if (this.dialogData) {
-      this.addEvent.id = this.dialogData.id;
       this.isUpdate = this.dialogData.isUpdate;
+      if (this.isUpdate && this.dialogData.data) {
+        this.addEvent = this.dialogData.data;
+      } else {
+        this.addEvent.id = this.dialogData.id;
+      }
     }
   }
 
+  //create new event
   addNewEvent() {
     this.updateEventDate();
-    this.dataService.addEvent(this.addEvent).subscribe({
-      next: (response) => {
-        console.log("Event added:", response);
-        this.addEvent = new Events();
-        this.dialogRef.close();
-      },
-      error: (err) => {
-        console.error("Error adding event:", err);
-      },
-    });
+    if (this.isUpdate) {
+      this.dataService.updateEvent(this.addEvent).subscribe({
+        next: (response) => {
+          console.log("Event updated:", response);
+          this.addEvent = new Events();
+          this.dialogRef.close();
+        },
+        error: (err) => {
+          console.error("Error updating event:", err);
+        },
+      });
+    } else {
+      this.dataService.addEvent(this.addEvent).subscribe({
+        next: (response) => {
+          console.log("Event added:", response);
+          this.addEvent = new Events();
+          this.dialogRef.close();
+        },
+        error: (err) => {
+          console.error("Error adding event:", err);
+        },
+      });
+    }
   }
 
+  //event date format
   updateEventDate() {
     const formattedDate = this.datePipe.transform(
       this.addEvent.date,

@@ -28,7 +28,7 @@
       "id": 2,
       "eventType": "Social Events",
       "guest": "200",
-      "date": "08/03/2024",
+      "date": "29/06/2025",
       "total": "4000"
     },
     {
@@ -40,9 +40,9 @@
     },
     {
       "id": 4,
-      "eventType": "Entertainment Events",
+      "eventType": "Entertainment Event",
       "guest": "300",
-      "date": "12/03/2024",
+      "date": "29/07/2025",
       "total": "5000"
     }
   ]

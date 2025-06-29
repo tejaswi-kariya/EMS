@@ -40,6 +40,7 @@ export class EventListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   ngOnInit() {
+    this.isUpdate=false;
     this.getEvents();
   }
 
@@ -104,6 +105,7 @@ export class EventListComponent implements OnInit {
       });
   }
 
+  //get new id to create new event
   getBookingID(): Number {
     let array = this.dataSource.data;
     const sArray = array.sort((a, b) => a.id - b.id);
@@ -111,7 +113,25 @@ export class EventListComponent implements OnInit {
   }
 
   onView(data) {}
-  onEdit(data) {}
+
+  //to update existing event
+  onEdit(data) {
+    this.isUpdate = true;
+    let dialogData = {
+      isUpdate: this.isUpdate,
+      data: data
+    };
+    this.dialog
+      .open(AddEventComponent, {
+        data: dialogData
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        this.getEvents();
+      });
+  }
+
+  //to delete event
   onDelete(data) {}
 
   onLogout() {

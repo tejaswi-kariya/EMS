@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { Events } from "./home/dashboard/event-list/model/event.model";
+import { eventNames } from "process";
 
 @Injectable({
   providedIn: "root",
@@ -48,11 +49,18 @@ export class DataService {
     localStorage.setItem("userLoggedIn", "true");
   }
 
+  //get list of events
   getEvent(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/events`);
   }
 
+  //Create New event
   addEvent(event: Events): Observable<Events> {
     return this.http.post<Events>(`${this.apiUrl}/events`, event);
+  }
+
+  //update exixting event
+  updateEvent(event: Events): Observable<Events> {
+    return this.http.patch<Events>(`${this.apiUrl}/events/${event.id}`, event);
   }
 }
