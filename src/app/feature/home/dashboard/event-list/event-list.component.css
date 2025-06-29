@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.mat-column-name {
+  padding-left: 16px;
+  font-size: 16px;
+}
+.mat-column-dataSourceFormat {
+  padding-left: 16px;
+  font-size: 16px;
+}
+.mat-column-description {
+  padding-left: 16px;
+  font-size: 16px;
+}
+.mat-column-businessOwner {
+  padding-left: 16px;
+  font-size: 16px;
+}
+.mat-column-price {
+  padding-left: 16px;
+  font-size: 16px;
+}
+.mat-column-action {
+  padding-left: 16px;
+  font-size: 16px;
+}
+
+ .mat-icon{
+    font-size: 20px;
+  }
