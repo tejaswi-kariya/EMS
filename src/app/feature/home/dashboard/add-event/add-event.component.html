@@ -1,3 +1,62 @@
-<p>
-  add-event works!
-</p>
+<mat-toolbar class="mb-2" mat-dialog-title color="primary">
+  <mat-toolbar-row>
+    <h2>{{"Add New Event"}}</h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+<form #eventForm="ngForm">
+  <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <!-- Booking ID -->
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <input matInput type="number" placeholder="Booking ID" #idModel="ngModel" required name="id"
+          [(ngModel)]="addEvent.id">
+      </mat-form-field>
+    </div>
+    <!-- Event Type -->
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Event Type" #typeModel="ngModel" name="eventType"
+          [(ngModel)]="addEvent.eventType">
+      </mat-form-field>
+    </div>
+    <!-- Number of Guest -->
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <textarea matInput type="text" placeholder="Number of Guest" #guestModel="ngModel" required name="guest"
+          [(ngModel)]="addEvent.guest"></textarea>
+        <mat-error *ngIf="guestModel.hasError('required')">
+          This field is Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- Event Date -->
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <input matInput [matDatepicker]="eventDate" placeholder="Choose Date" (focus)="eventDate.open()"
+          (click)="eventDate.open(); showError = false" name="event-date" [(ngModel)]="addEvent.date" #eventDateModel
+          required>
+        <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+        <mat-datepicker #eventDate></mat-datepicker>
+        <mat-error
+          *ngIf="eventDateModel.errors && eventDateModel.errors.required && (eventDateModel.dirty || eventDateModel.touched || eventForm.submitted)">
+          This field is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- Amount -->
+    <div fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <input matInput type="number" placeholder="Total Amount" #amtModel="ngModel" required name="amt"
+          [(ngModel)]="addEvent.total">
+        <mat-error *ngIf="amtModel.hasError('required')">
+          This field is Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-raised-button mat-dialog-close color="accent">Cancel</button>
+    <button mat-raised-button (click)="addNewEvent()" class="m-2" color="primary" type="button"
+      [disabled]="eventForm.invalid">ADD</button>
+  </mat-dialog-actions>
+</form>

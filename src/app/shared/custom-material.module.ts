@@ -1,4 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { MatNativeDateModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
@@ -25,13 +26,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatCardModule, MatFormFieldModule, MatIconModule, MatToolbarModule, MatRadioModule,
     MatAutocompleteModule, MatPaginatorModule, MatCheckboxModule, MatSelectModule, MatDialogModule,
     MatTooltipModule, MatListModule, MatInputModule, MatButtonModule, MatDatepickerModule,
-    MatGridListModule, MatSnackBarModule, MatTableModule, MatSortModule
+    MatGridListModule, MatSnackBarModule, MatTableModule, MatSortModule,
+    MatNativeDateModule 
   ],
   exports: [
     MatCardModule, MatFormFieldModule, MatIconModule, MatToolbarModule, MatRadioModule,
     MatAutocompleteModule, MatPaginatorModule, MatCheckboxModule, MatSelectModule, MatDialogModule,
     MatTooltipModule, MatListModule, MatInputModule, MatButtonModule, MatDatepickerModule,
-    MatGridListModule, MatSnackBarModule, MatTableModule, MatSortModule
+    MatGridListModule, MatSnackBarModule, MatTableModule, MatSortModule, MatNativeDateModule
   ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 

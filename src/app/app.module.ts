@@ -9,16 +9,12 @@ import { LoginFormComponent } from './feature/home/login/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { RegistrationComponent } from './feature/home/registration/registration.component';
-import { EventListComponent } from './feature/home/dashboard/event-list/event-list.component';
-import { AddEventComponent } from './feature/home/dashboard/add-event/add-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     LoginFormComponent,
-    RegistrationComponent,
-    AddEventComponent
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

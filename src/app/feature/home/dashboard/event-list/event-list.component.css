@@ -5,23 +5,23 @@ table {
   font-size: 14px;
   width: 100%;
 }
-.mat-column-name {
+.mat-column-id {
   padding-left: 16px;
   font-size: 16px;
 }
-.mat-column-dataSourceFormat {
+.mat-column-type {
   padding-left: 16px;
   font-size: 16px;
 }
-.mat-column-description {
+.mat-column-guest {
   padding-left: 16px;
   font-size: 16px;
 }
-.mat-column-businessOwner {
+.mat-column-date {
   padding-left: 16px;
   font-size: 16px;
 }
-.mat-column-price {
+.mat-column-total {
   padding-left: 16px;
   font-size: 16px;
 }

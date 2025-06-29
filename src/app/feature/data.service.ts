@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
+import { Events } from "./home/dashboard/event-list/model/event.model";
 
 @Injectable({
   providedIn: "root",
@@ -18,12 +19,6 @@ export class DataService {
     );
   }
 
-  getEvent(): Observable<any[]> {
-   return this.http.get<any[]>(
-      `${this.apiUrl}/events`
-    );
-  }
-
   isUserLoggedIn(): boolean {
     const expiry = localStorage.getItem("sessionExpiry");
     const loggedIn = localStorage.getItem("userLoggedIn") === "true";
@@ -33,8 +28,7 @@ export class DataService {
       const now = Date.now();
 
       if (now > expiryTime) {
-        // Token has expired
-        this.logoutUser(); // Important: call logout to clear data
+        this.logoutUser();
         return false;
       }
     }
@@ -52,5 +46,13 @@ export class DataService {
     const expiryDuration = Date.now() + 220000; // It is 3 mins == 220000 miliseconds
     localStorage.setItem("sessionExpiry", expiryDuration.toString());
     localStorage.setItem("userLoggedIn", "true");
+  }
+
+  getEvent(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/events`);
+  }
+
+  addEvent(event: Events): Observable<Events> {
+    return this.http.post<Events>(`${this.apiUrl}/events`, event);
   }
 }
