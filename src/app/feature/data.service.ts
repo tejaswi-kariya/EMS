@@ -68,4 +68,10 @@ export class DataService {
   deleteEvent(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/events/${id}`);
   }
+
+  // Get Parsed UTC date
+  getParsedDate(dateStr: string): Date {
+    const [day, month, year] = dateStr.split("/").map(Number);
+    return new Date(Date.UTC(year, month - 1, day));
+  }
 }

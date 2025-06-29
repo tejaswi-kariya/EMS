@@ -12,6 +12,7 @@ import { DatePipe } from "@angular/common";
 export class AddEventComponent implements OnInit {
   public addEvent: Events = new Events();
   private isUpdate: Boolean;
+  private selectedDate!: Date;
   constructor(
     private dialogRef: MatDialogRef<AddEventComponent>,
     @Inject(MAT_DIALOG_DATA) public dialogData: any,
@@ -24,6 +25,7 @@ export class AddEventComponent implements OnInit {
       this.isUpdate = this.dialogData.isUpdate;
       if (this.isUpdate && this.dialogData.data) {
         this.addEvent = this.dialogData.data;
+        this.selectedDate = this.dataService.getParsedDate(this.addEvent.date);
       } else {
         this.addEvent.id = this.dialogData.id;
       }
@@ -32,7 +34,6 @@ export class AddEventComponent implements OnInit {
 
   //create new event
   addNewEvent() {
-    this.updateEventDate();
     if (this.isUpdate) {
       this.dataService.updateEvent(this.addEvent).subscribe({
         next: (response) => {

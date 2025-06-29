@@ -21,28 +21,28 @@
       "id": 1,
       "eventType": "Corporate Events",
       "guest": "100",
-      "date": "12/03/2024",
+      "date": "2025-07-28T18:30:00.000Z",
       "total": "2000"
     },
     {
       "id": 2,
       "eventType": "Social Events",
       "guest": "200",
-      "date": "29/06/2025",
+      "date": "2025-05-31T18:30:00.000Z",
       "total": "4000"
     },
     {
       "id": 3,
       "eventType": "Educational Events",
       "guest": "400",
-      "date": "12/03/2024",
+      "date": "2025-06-10T18:30:00.000Z",
       "total": "6000"
     },
     {
       "id": 4,
       "eventType": "Entertainment Event",
       "guest": "300",
-      "date": "29/07/2025",
+      "date": "2025-07-15T18:30:00.000Z",
       "total": "5000"
     }
   ]

@@ -42,7 +42,7 @@
       <!-- Event Date -->
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef> Event Date</th>
-        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.date | date:'dd/MM/yyyy'}} </td>
       </ng-container>
 
       <!-- Total Ammount-->
@@ -54,9 +54,9 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let element">
-        <button mat-icon-button color="primary" type="button" matTooltip="View" (click)="onView(element)">
+        <!-- <button mat-icon-button color="primary" type="button" matTooltip="View" (click)="onView(element)">
           <mat-icon>visibility</mat-icon>
-        </button>
+        </button> -->
         <button mat-icon-button color="primary" type="button" matTooltip="edit" (click)="onEdit(element)">
           <mat-icon>edit</mat-icon>
         </button>

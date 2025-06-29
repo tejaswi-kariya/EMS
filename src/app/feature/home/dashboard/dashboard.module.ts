@@ -8,6 +8,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { DashboardComponent } from './dashboard.component';
 import { AddEventComponent } from './add-event/add-event.component';
 
+
 @NgModule({
   declarations: [EventListComponent , DashboardComponent, AddEventComponent],
   imports: [

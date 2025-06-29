@@ -11,6 +11,7 @@ import {
 import { DataService } from "src/app/feature/data.service";
 import { AddEventComponent } from "../add-event/add-event.component";
 
+
 @Component({
   selector: "app-event-list",
   templateUrl: "./event-list.component.html",
@@ -112,7 +113,17 @@ export class EventListComponent implements OnInit {
     return sArray[sArray.length - 1].id + 1;
   }
 
-  onView(data) {}
+  //view event details
+ /*  onView(data) {
+    this.dialog
+      .open(ViewEventComponent, {
+        data: data
+      })
+      .afterClosed()
+      .subscribe((result) => {
+        this.getEvents();
+      });
+  } */
 
   //to update existing event
   onEdit(data) {
