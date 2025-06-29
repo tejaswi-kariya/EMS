@@ -63,4 +63,9 @@ export class DataService {
   updateEvent(event: Events): Observable<Events> {
     return this.http.patch<Events>(`${this.apiUrl}/events/${event.id}`, event);
   }
+
+  // Delete event
+  deleteEvent(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/events/${id}`);
+  }
 }

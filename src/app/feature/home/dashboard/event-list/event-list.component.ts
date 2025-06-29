@@ -132,7 +132,13 @@ export class EventListComponent implements OnInit {
   }
 
   //to delete event
-  onDelete(data) {}
+  onDelete(data) {
+    if (confirm('Are you sure you want to delete this event?')) {
+      this.dataService.deleteEvent(data.id).subscribe(() => {
+       this.getEvents();
+      });
+    }
+  }
 
   onLogout() {
     this.dataService.logoutUser();
