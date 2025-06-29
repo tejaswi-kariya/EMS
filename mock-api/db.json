@@ -44,20 +44,6 @@
       "guest": "300",
       "date": "12/03/2024",
       "total": "5000"
-    },
-    {
-      "id": 5,
-      "eventType": "Event Five",
-      "guest": "1",
-      "date": "29/06/2025",
-      "total": 1000
-    },
-    {
-      "id": 6,
-      "eventType": "EVent Six",
-      "guest": "6",
-      "date": "25/07/2025",
-      "total": 5000
     }
   ]
 }
