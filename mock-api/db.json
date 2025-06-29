@@ -32,6 +32,13 @@
       "total": "4000"
     },
     {
+      "id": 3,
+      "eventType": "Educational Events",
+      "guest": "400",
+      "date": "12/03/2024",
+      "total": "6000"
+    },
+    {
       "id": 4,
       "eventType": "Entertainment Event",
       "guest": "300",
