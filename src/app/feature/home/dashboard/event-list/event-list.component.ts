@@ -29,6 +29,7 @@ export class EventListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   sortedData: any[];
+  isUpdate: boolean = false;
   constructor(
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
@@ -88,11 +89,25 @@ export class EventListComponent implements OnInit {
 
   // create new event
   onAdd() {
+    this.isUpdate = false;
+    let dialogData = {
+      id: this.getBookingID(),
+      isUpdate: this.isUpdate,
+    };
     this.dialog
-      .open(AddEventComponent)
-      .afterClosed().subscribe((result) => {
+      .open(AddEventComponent, {
+        data: dialogData
+      })
+      .afterClosed()
+      .subscribe((result) => {
         this.getEvents();
       });
+  }
+
+  getBookingID(): Number {
+    let array = this.dataSource.data;
+    const sArray = array.sort((a, b) => a.id - b.id);
+    return sArray[sArray.length - 1].id + 1;
   }
 
   onView(data) {}

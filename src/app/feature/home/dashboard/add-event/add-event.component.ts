@@ -11,14 +11,20 @@ import { DatePipe } from "@angular/common";
 })
 export class AddEventComponent implements OnInit {
   public addEvent: Events = new Events();
-
+  private isUpdate: Boolean;
   constructor(
     private dialogRef: MatDialogRef<AddEventComponent>,
+    @Inject(MAT_DIALOG_DATA) public dialogData: any,
     private dataService: DataService,
     private datePipe: DatePipe
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.dialogData) {
+      this.addEvent.id = this.dialogData.id;
+      this.isUpdate = this.dialogData.isUpdate;
+    }
+  }
 
   addNewEvent() {
     this.updateEventDate();
