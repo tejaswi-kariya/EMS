@@ -14,7 +14,6 @@ export class AddEventComponent implements OnInit {
 
   public addEvent: Events = new Events();
   private isUpdate: Boolean;
-  private selectedDate!: Date;
 
   eventForm : FormGroup;
   constructor(
@@ -37,8 +36,13 @@ export class AddEventComponent implements OnInit {
     if (this.dialogData) {
       this.isUpdate = this.dialogData.isUpdate;
       if (this.isUpdate && this.dialogData.data) {
-        this.addEvent = this.dialogData.data;
-        this.selectedDate = this.dataService.getParsedDate(this.addEvent.date);
+        this.eventForm = this.fb.group({
+          id: this.dialogData.data.id,
+          eventType: this.dialogData.data.eventType,
+          guest: this.dialogData.data.guest,
+          date: new Date(this.dialogData.data.date),
+          total: this.dialogData.data.total,
+        });
       } else {
         this.eventForm.controls["id"].setValue(this.dialogData.id);
         this.eventForm.controls["id"].disable();
@@ -54,7 +58,6 @@ export class AddEventComponent implements OnInit {
       this.dataService.updateEvent(formData).subscribe({
         next: (response) => {
           console.log("Event updated:", response);
-          this.addEvent = new Events();
           this.dialogRef.close();
         },
         error: (err) => {
@@ -65,7 +68,6 @@ export class AddEventComponent implements OnInit {
       this.dataService.addEvent(formData).subscribe({
         next: (response) => {
           console.log("Event added:", response);
-          this.addEvent = new Events();
           this.dialogRef.close();
         },
         error: (err) => {

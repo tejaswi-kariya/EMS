@@ -21,7 +21,7 @@ export class DataService {
     );
   }
 
-    // Create New user
+  // Create New user
   createNewUser(user: Users): Observable<Users> {
     return this.http.post<Users>(`${this.apiUrl}/users`, user);
   }
@@ -75,9 +75,4 @@ export class DataService {
     return this.http.delete<void>(`${this.apiUrl}/events/${id}`);
   }
 
-  // Get Parsed UTC date
-  getParsedDate(dateStr: string): Date {
-    const [day, month, year] = dateStr.split("/").map(Number);
-    return new Date(Date.UTC(year, month - 1, day));
-  }
 }

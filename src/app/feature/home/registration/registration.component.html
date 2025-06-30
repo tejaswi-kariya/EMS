@@ -41,7 +41,7 @@
                 <input matInput type="password" formControlName="password">
                 <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">Password is
                   required</mat-error>
-                <mat-error *ngIf="registrationForm.get('password')?.hasError('minlength')">Minimum 6
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('minlength')">Password should be minimum 6
                   characters</mat-error>
               </mat-form-field>
 
@@ -53,7 +53,7 @@
                 <mat-error *ngIf="registrationForm.errors?.mismatch">Passwords do not match</mat-error>
               </mat-form-field>
 
-              <button mat-raised-button color="primary" type="submit">Register</button>
+              <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
 
               <p class="new-user-prompt" style="text-align: center;">Already have an account? <a routerLink="/home">Login</a></p>
             </form>
