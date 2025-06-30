@@ -60,10 +60,10 @@ mat-form-field {
 
 /* this is for new user text */
 .new-user-prompt {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   text-align: center;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
 
   a {
     font-weight: 500;
