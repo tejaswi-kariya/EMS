@@ -35,14 +35,15 @@
 
 .l-card {
   width: 100%;
-  max-width: 400px;
-  padding: 0.5rem;
+  max-width: 450px;
+  padding: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
 }
 
 mat-form-field {
-  margin-bottom: 50px; /* Adds gap below each field */
+  margin-bottom: 15px;
+  padding-bottom: 0rem;
 }
 
 .center-title {

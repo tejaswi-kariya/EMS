@@ -21,7 +21,7 @@
                         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column">
 
                             <!-- Email field -->
-                            <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+                            <mat-form-field class="full-width">
                                 <mat-label>Email</mat-label>
                                 <input matInput type="email" formControlName="email">
                                 <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is
