@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
-import { Events } from "../event-list/model/event.model";
+import { Events } from "../../model/event.model";
 import { DataService } from "src/app/feature/data.service";
 import { DatePipe } from "@angular/common";
 

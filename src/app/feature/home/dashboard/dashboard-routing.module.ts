@@ -10,7 +10,8 @@ const routes: Routes = [{
     component: DashboardComponent,
     children: [{
      path: "event-list", component: EventListComponent, canActivate: [AuthGuard]
-    }]
+    }
+  ]
 }];
 
 @NgModule({

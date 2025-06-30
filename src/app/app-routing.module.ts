@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './feature/home/login/login-form.component';
 import { DashboardComponent } from './feature/home/dashboard/dashboard.component';
 import { AuthGuard } from './shared/auth.guard';
+import { RegistrationComponent } from './feature/home/registration/registration.component';
 
 const routes: Routes =  [{
   path: '', pathMatch: 'full', redirectTo: 'home'
@@ -14,6 +15,10 @@ const routes: Routes =  [{
      path: 'dashboard',
      loadChildren: 'src/app/feature/home/dashboard/dashboard.module#DashboardModule' 
     
+   },
+   {
+     path: 'register',
+    component: RegistrationComponent
    }
    /* ,
    {

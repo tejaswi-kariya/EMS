@@ -2,8 +2,9 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
-import { Events } from "./home/dashboard/event-list/model/event.model";
+import { Events } from "./home/model/event.model";
 import { eventNames } from "process";
+import { Users } from "./home/model/user.model";
 
 @Injectable({
   providedIn: "root",
@@ -18,6 +19,11 @@ export class DataService {
     return this.http.get<any[]>(
       `${this.apiUrl}/users?email=${email}&password=${password}`
     );
+  }
+
+    // Create New user
+  createNewUser(user: Users): Observable<Users> {
+    return this.http.post<Users>(`${this.apiUrl}/users`, user);
   }
 
   isUserLoggedIn(): boolean {

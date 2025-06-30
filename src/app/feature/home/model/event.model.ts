@@ -1,7 +1,7 @@
 export class Events {
   id: number;
-  eventType: String;
-  guest: String;
+  eventType: string;
+  guest: string;
   total: string;
   date: string;
 }
