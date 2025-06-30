@@ -53,9 +53,11 @@
                 <mat-error *ngIf="registrationForm.get('confirmPassword')?.dirty">Passwords do not match</mat-error>
               </mat-form-field>
 
-              <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
+              <button mat-raised-button color="primary" type="submit"
+                [disabled]="registrationForm.invalid">Register</button>
 
-              <p class="new-user-prompt" style="text-align: center;">Already have an account? <a routerLink="/home">Login</a></p>
+              <p class="new-user-prompt" style="text-align: center;">Already have an account? <a
+                  routerLink="/home">Login</a></p>
             </form>
 
           </mat-card-content>
