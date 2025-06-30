@@ -3,57 +3,72 @@
     <h2>{{isUpdate ? 'Edit Event' : 'Add New Event'}}</h2>
   </mat-toolbar-row>
 </mat-toolbar>
-<form #eventForm="ngForm">
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="40px">
   <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutAlign="space-between center">
     <!-- Booking ID -->
     <div fxLayout="column" fxFlex="100">
-      <mat-form-field>
-        <input matInput type="number" placeholder="Booking ID" #idModel="ngModel" required name="id"
-          [(ngModel)]="addEvent.id" disabled>
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+        <mat-label>Booking Id</mat-label>
+        <input matInput type="text" formControlName="id">
       </mat-form-field>
     </div>
+
     <!-- Event Type -->
     <div fxLayout="column" fxFlex="100">
-      <mat-form-field>
-        <input matInput type="text" placeholder="Event Type" #typeModel="ngModel" name="eventType"
-          [(ngModel)]="addEvent.eventType">
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+        <mat-label>Event Type</mat-label>
+        <input matInput type="text" formControlName="eventType">
+
+        <small class="form-text text-muted"
+          *ngIf="eventForm.controls.eventType.touched && eventForm.controls.eventType.errors?.required">
+          This field is required.
+        </small>
       </mat-form-field>
     </div>
+
     <!-- Number of Guest -->
     <div fxLayout="column" fxFlex="100">
-      <mat-form-field>
-        <textarea matInput type="text" placeholder="Number of Guest" #guestModel="ngModel" required name="guest"
-          [(ngModel)]="addEvent.guest"></textarea>
-        <mat-error *ngIf="guestModel.hasError('required')">
-          This field is Required
-        </mat-error>
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+        <mat-label>Number of Guest</mat-label>
+        <input matInput type="text" formControlName="guest">
+
+        <small class="form-text text-muted"
+          *ngIf="eventForm.controls.guest.touched && eventForm.controls.guest.errors?.required">
+          This field is required.
+        </small>
       </mat-form-field>
     </div>
+
     <!-- Event Date -->
     <div fxLayout="column" fxFlex="100">
       <mat-form-field>
         <input matInput [matDatepicker]="eventDate" placeholder="Choose Date" (focus)="eventDate.open()"
-          (click)="eventDate.open(); showError = false" name="event-date" [(ngModel)]="addEvent.date" #eventDateModel
-          required>
+          (click)="eventDate.open(); showError = false" name="event-date" formControlName="date" required>
         <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
         <mat-datepicker #eventDate></mat-datepicker>
-        <mat-error
-          *ngIf="eventDateModel.errors && eventDateModel.errors.required && (eventDateModel.dirty || eventDateModel.touched || eventForm.submitted)">
-          This field is required.
+        <mat-error *ngIf="eventForm.get('date')?.hasError('required') && eventForm.get('date')?.touched">
+          This field is required
         </mat-error>
       </mat-form-field>
     </div>
+
     <!-- Amount -->
     <div fxLayout="column" fxFlex="100">
-      <mat-form-field>
-        <input matInput type="number" placeholder="Total Amount" #amtModel="ngModel" required name="amt"
-          [(ngModel)]="addEvent.total">
-        <mat-error *ngIf="amtModel.hasError('required')">
-          This field is Required
-        </mat-error>
+      <mat-form-field appearance="fill" floatLabel="always" class="full-width">
+        <mat-label>Total Amount</mat-label>
+        <input matInput type="text" formControlName="total">
+        <small class="form-text text-muted"
+          *ngIf="eventForm.controls.total.touched && eventForm.controls.total.errors?.required">
+          This field is required.
+        </small>
       </mat-form-field>
     </div>
+
+    
+
   </mat-dialog-content>
+
   <mat-dialog-actions fxLayoutAlign="end center">
     <button mat-raised-button mat-dialog-close color="accent">Cancel</button>
     <button mat-raised-button (click)="addNewEvent()" class="m-2" color="primary" type="button"

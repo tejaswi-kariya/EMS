@@ -3,7 +3,7 @@
         <div fxLayout="row" fxLayoutAlign="center center" class="container">
 
             <!-- Left Column -->
-            <div fxFlex="50" class="left-side">
+            <div fxFlex="70" class="left-side">
                 <h1>Event Management</h1>
                 <p class="l-description"> Event management, as described in Event Management For Dummies, is the process
                     of planning, organizing, and executing various events, both large and small, from conferences and
@@ -13,38 +13,32 @@
                     into a successful, memorable experience. </p>
             </div>
 
-            <div fxFlex="30" class="l-container">
+            <div fxFlex="30">
                 <mat-card class="l-card">
                     <!-- <div class="l-container"> -->
                     <mat-card-title class="center-title">Login</mat-card-title>
                     <mat-card-content>
-                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutGap="40px">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column">
 
-                            <!-- Email id field -->
+                            <!-- Email field -->
                             <mat-form-field appearance="fill" floatLabel="always" class="full-width">
                                 <mat-label>Email</mat-label>
                                 <input matInput type="email" formControlName="email">
-
-                                <small class="form-text text-muted"
-                                    *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
-                                    Please enter email address.
-                                </small>
-
-                                <mat-error *ngIf="loginForm.get('email').invalid">Please enter valid email
-                                    address</mat-error>
+                                <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is
+                                    required</mat-error>
+                                <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Please enter valid
+                                    email</mat-error>
                             </mat-form-field>
 
                             <!-- Password field -->
                             <mat-form-field>
                                 <mat-label>Password</mat-label>
                                 <input matInput type="password" formControlName="password">
-                                <small class="form-text text-muted"
-                                    *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
-                                    Password is required.
-                                </small>
+                                <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is
+                                    required</mat-error>
                             </mat-form-field>
 
-                            <!-- Action button -->
+                            <!-- Login button -->
                             <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
                                 Login
                             </button>

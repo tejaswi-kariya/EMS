@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { EventListComponent } from './event-list/event-list.component';
 import { DashboardComponent } from './dashboard.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AddEventComponent } from './add-event/add-event.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   entryComponents: [AddEventComponent],
   providers: []

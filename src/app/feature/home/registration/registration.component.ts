@@ -18,7 +18,7 @@ import { HttpClient } from "@angular/common/http";
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   passwordMismatch = false;
-  private newUSer: Users = new Users();
+  private newUser: Users = new Users();
 
   constructor(
     private fb: FormBuilder,
@@ -41,19 +41,19 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {}
 
   register() {
-    this.newUSer.firstName = this.registrationForm.value.name;
-    this.newUSer.lastName = this.registrationForm.value.lastName;
-    (this.newUSer.email = this.registrationForm.value.email),
-      (this.newUSer.password = this.registrationForm.value.password);
+    this.newUser.firstName = this.registrationForm.value.name;
+    this.newUser.lastName = this.registrationForm.value.lastName;
+    (this.newUser.email = this.registrationForm.value.email),
+      (this.newUser.password = this.registrationForm.value.password);
 
     // is user already exists
     this.http
-      .get<any[]>(`http://localhost:3000/users?email=${this.newUSer.email}`)
+      .get<any[]>(`http://localhost:3000/users?email=${this.newUser.email}`)
       .subscribe((users) => {
         if (users.length > 0) {
           alert("Email already exists");
         } else {
-          this.dataService.createNewUser(this.newUSer).subscribe(() => {
+          this.dataService.createNewUser(this.newUser).subscribe(() => {
             alert("Registration successful");
             this.router.navigate(["home"]);
           });

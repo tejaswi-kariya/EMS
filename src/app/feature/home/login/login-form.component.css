@@ -35,14 +35,14 @@
 
 .l-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 250px;
   padding: 1rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
 }
 
 mat-form-field {
-  margin-bottom: 50px; /* Adds gap below each field */
+  margin-bottom: 20px;
 }
 
 .center-title {
@@ -52,11 +52,13 @@ mat-form-field {
   margin-bottom: 16px;
 }
 
+/* Login description */
 .l-description {
   text-align: justify;
   padding-right: 5%;
 }
 
+/* this is for new user text */
 .new-user-prompt {
   margin-top: 0.5rem;
   text-align: center;
@@ -65,7 +67,7 @@ mat-form-field {
 
   a {
     font-weight: 500;
-    margin-left: 8px;
+    margin-left: 1px;
     text-decoration: none;
     color: #3f51b5;
 
