@@ -34,11 +34,28 @@ export class RegistrationComponent implements OnInit {
         password: ["", [Validators.required, Validators.minLength(6)]],
         confirmPassword: ["", Validators.required],
       },
-      {}
+      {validator: this.checkConfirmPassword(),}
     );
   }
 
   ngOnInit() {}
+
+  checkConfirmPassword() {
+    return (formGroup: FormGroup) => {
+      const password = formGroup.controls['password'];
+      const cpassword = formGroup.controls['confirmPassword'];
+      if (cpassword.errors &&
+        !cpassword.errors.passwordMismatch
+      ) {
+        return;
+      }
+      if (password.value === cpassword.value) {
+        cpassword.setErrors(null);
+      } else {
+        cpassword.setErrors({ passwordMismatch: true });
+      }
+    };
+  }
 
   register() {
     this.newUser.firstName = this.registrationForm.value.name;

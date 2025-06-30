@@ -50,7 +50,7 @@
                 <input matInput type="password" formControlName="confirmPassword">
                 <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">Confirm your
                   password</mat-error>
-                <mat-error *ngIf="registrationForm.errors?.mismatch">Passwords do not match</mat-error>
+                <mat-error *ngIf="registrationForm.get('confirmPassword')?.dirty">Passwords do not match</mat-error>
               </mat-form-field>
 
               <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Register</button>
