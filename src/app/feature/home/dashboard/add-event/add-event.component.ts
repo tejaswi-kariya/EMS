@@ -14,6 +14,8 @@ export class AddEventComponent implements OnInit {
 
   public addEvent: Events = new Events();
   private isUpdate: Boolean;
+  private today = new Date()
+
 
   eventForm : FormGroup;
   constructor(
@@ -21,7 +23,7 @@ export class AddEventComponent implements OnInit {
     private dialogRef: MatDialogRef<AddEventComponent>,
     @Inject(MAT_DIALOG_DATA) public dialogData: any, 
     private dataService: DataService,
-    private datePipe: DatePipe //private eventData:any
+    private datePipe: DatePipe
   ) {
     this.eventForm = this.fb.group({
           id: [""],
@@ -43,6 +45,8 @@ export class AddEventComponent implements OnInit {
           date: new Date(this.dialogData.data.date),
           total: this.dialogData.data.total,
         });
+        this.eventForm.controls["id"].disable();
+
       } else {
         this.eventForm.controls["id"].setValue(this.dialogData.id);
         this.eventForm.controls["id"].disable();
@@ -53,7 +57,7 @@ export class AddEventComponent implements OnInit {
   //create new event
   addNewEvent() {
     const formData = this.eventForm.value;
-
+    formData.id = this.eventForm.controls["id"].value;
     if (this.isUpdate) {
       this.dataService.updateEvent(formData).subscribe({
         next: (response) => {

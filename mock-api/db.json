@@ -33,36 +33,43 @@
       "id": 2,
       "eventType": "Social Events",
       "guest": "200",
-      "date": "2025-05-31T18:30:00.000Z",
+      "date": "2025-08-27T18:30:00.000Z",
       "total": "4000"
     },
     {
       "id": 3,
       "eventType": "Educational Events",
-      "guest": "400",
-      "date": "2025-06-10T18:30:00.000Z",
+      "guest": "40",
+      "date": "2025-07-14T18:30:00.000Z",
       "total": "6000"
     },
     {
       "id": 4,
       "eventType": "Entertainment Event",
-      "guest": "300",
+      "guest": "30",
       "date": "2025-07-15T18:30:00.000Z",
       "total": "5000"
     },
     {
       "eventType": "social",
-      "guest": "23",
-      "date": "2025-06-29T18:30:00.000Z",
-      "total": "23",
+      "guest": "13",
+      "date": "2025-07-15T18:30:00.000Z",
+      "total": "2350",
       "id": 5
     },
     {
-      "eventType": "social",
-      "guest": "22",
-      "date": "2025-07-21T18:30:00.000Z",
-      "total": "343545",
-      "id": 6
+      "eventType": "Test Event for Row 10",
+      "guest": "1",
+      "date": "2025-07-27T18:30:00.000Z",
+      "total": "100",
+      "id": 7
+    },
+    {
+      "eventType": "Sports Event",
+      "guest": "12",
+      "date": "2025-07-25T18:30:00.000Z",
+      "total": "1200",
+      "id": 8
     }
   ]
 }

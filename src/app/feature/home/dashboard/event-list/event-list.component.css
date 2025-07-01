@@ -11,23 +11,23 @@ table {
 }
 .mat-column-type {
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .mat-column-guest {
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .mat-column-date {
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .mat-column-total {
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .mat-column-action {
   padding-left: 16px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
  .mat-icon{
