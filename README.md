@@ -29,11 +29,11 @@ This project was generated with
 
 2. Start the development server
  
- Run `json-server --watch mock-api/db.json --port 3000` to start sever.
+     Run `json-server --watch mock-api/db.json --port 3000` to start sever.
 
 3. Run the application
 
-Run `ng serve` for a application. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Run `ng serve` for a application. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Description
 
@@ -41,6 +41,7 @@ Event management application is to manage any events. An events refers to social
 The objective of this application is to develop a system that effectively manages all the data related to the various events.
 
 This app covers following functionality:
+
       - Registration
       - Login/ Logout
       - Add Event
