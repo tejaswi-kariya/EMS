@@ -38,3 +38,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 https://github.com/user-attachments/assets/32fb23b7-4859-45a6-8103-64c6ecc7fd51
 
+## Event List
+
+https://github.com/user-attachments/assets/6d551583-947a-482e-b149-c880b9491179
+
+
+
+
