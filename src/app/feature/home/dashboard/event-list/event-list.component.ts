@@ -152,6 +152,9 @@ export class EventListComponent implements OnInit {
   }
 
   onLogout() {
-    this.dataService.logoutUser();
+    const confirmed = window.confirm("Are you sure you want to Logout?");
+    if (confirmed) {
+      this.dataService.logoutUser();
+    }
   }
 }
