@@ -33,7 +33,7 @@ export class LoginFormComponent implements OnInit {
           alert("Login successful!");
           this.dataService.isUserLogin = true;
           this.dataService.setLoginSuccess();
-          this.router.navigate(['./dashboard/event-list']);
+          this.router.navigate(["./dashboard/event-list"]);
         } else {
           alert("Invalid email or password");
         }

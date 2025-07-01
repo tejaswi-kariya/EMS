@@ -26,6 +26,11 @@ export class DataService {
     return this.http.post<Users>(`${this.apiUrl}/users`, user);
   }
 
+  // Get user
+  getUser(email: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/users?email=${email}`);
+  }
+
   isUserLoggedIn(): boolean {
     const expiry = localStorage.getItem("sessionExpiry");
     const loggedIn = localStorage.getItem("userLoggedIn") === "true";
@@ -74,5 +79,4 @@ export class DataService {
   deleteEvent(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/events/${id}`);
   }
-
 }

@@ -5,75 +5,72 @@
 </mat-toolbar>
 
 <div class="form-wrapper">
-<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" fxLayout="column">
-  <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutAlign="space-between center">
-    <!-- Booking ID -->
-    <div fxLayout="column" fxFlex="100">
-      <mat-form-field class="full-width">
-        <mat-label>Booking Id</mat-label>
-        <input matInput type="text" formControlName="id">
-      </mat-form-field>
-    </div>
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" fxLayout="column">
+    <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutAlign="space-between center">
+      <!-- Booking ID -->
+      <div fxLayout="column" fxFlex="100">
+        <mat-form-field class="full-width">
+          <mat-label>Booking Id</mat-label>
+          <input matInput type="text" formControlName="id">
+        </mat-form-field>
+      </div>
 
-    <!-- Event Type -->
-    <div fxLayout="column" fxFlex="100">
-      <mat-form-field class="full-width">
-        <mat-label>Event Type</mat-label>
-        <input matInput type="text" formControlName="eventType">
+      <!-- Event Type -->
+      <div fxLayout="column" fxFlex="100">
+        <mat-form-field class="full-width">
+          <mat-label>Event Type</mat-label>
+          <input matInput type="text" formControlName="eventType">
 
-        <small class="form-text text-muted"
-          *ngIf="eventForm.controls.eventType.touched && eventForm.controls.eventType.errors?.required">
-          This field is required.
-        </small>
-      </mat-form-field>
-    </div>
+          <small class="form-text text-muted"
+            *ngIf="eventForm.controls.eventType.touched && eventForm.controls.eventType.errors?.required">
+            This field is required.
+          </small>
+        </mat-form-field>
+      </div>
 
-    <!-- Number of Guest -->
-    <div fxLayout="column" fxFlex="100">
-      <mat-form-field class="full-width">
-        <mat-label>Number of Guest</mat-label>
-        <input matInput type="text" formControlName="guest">
+      <!-- Number of Guest -->
+      <div fxLayout="column" fxFlex="100">
+        <mat-form-field class="full-width">
+          <mat-label>Number of Guest</mat-label>
+          <input matInput type="text" formControlName="guest">
 
-        <small class="form-text text-muted"
-          *ngIf="eventForm.controls.guest.touched && eventForm.controls.guest.errors?.required">
-          This field is required.
-        </small>
-      </mat-form-field>
-    </div>
+          <small class="form-text text-muted"
+            *ngIf="eventForm.controls.guest.touched && eventForm.controls.guest.errors?.required">
+            This field is required.
+          </small>
+        </mat-form-field>
+      </div>
 
-    <!-- Event Date -->
-    <div fxLayout="column" fxFlex="100">
-      <mat-form-field>
-        <input matInput [matDatepicker]="eventDate" placeholder="Choose Date" (focus)="eventDate.open()"
-          [min]="today" (click)="eventDate.open(); showError = false" name="event-date" formControlName="date" required>
-        <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
-        <mat-datepicker #eventDate></mat-datepicker>
-        <mat-error *ngIf="eventForm.get('date')?.hasError('required') && eventForm.get('date')?.touched">
-          This field is required
-        </mat-error>
-      </mat-form-field>
-    </div>
+      <!-- Event Date -->
+      <div fxLayout="column" fxFlex="100">
+        <mat-form-field>
+          <input matInput [matDatepicker]="eventDate" placeholder="Choose Date" (focus)="eventDate.open()" [min]="today"
+            (click)="eventDate.open(); showError = false" name="event-date" formControlName="date" required>
+          <mat-datepicker-toggle matSuffix [for]="eventDate"></mat-datepicker-toggle>
+          <mat-datepicker #eventDate></mat-datepicker>
+          <mat-error *ngIf="eventForm.get('date')?.hasError('required') && eventForm.get('date')?.touched">
+            This field is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-    <!-- Amount -->
-    <div fxLayout="column" fxFlex="100">
-      <mat-form-field class="full-width">
-        <mat-label>Total Amount</mat-label>
-        <input matInput type="text" formControlName="total">
-        <small class="form-text text-muted"
-          *ngIf="eventForm.controls.total.touched && eventForm.controls.total.errors?.required">
-          This field is required.
-        </small>
-      </mat-form-field>
-    </div>
+      <!-- Amount -->
+      <div fxLayout="column" fxFlex="100">
+        <mat-form-field class="full-width">
+          <mat-label>Total Amount</mat-label>
+          <input matInput type="text" formControlName="total">
+          <small class="form-text text-muted"
+            *ngIf="eventForm.controls.total.touched && eventForm.controls.total.errors?.required">
+            This field is required.
+          </small>
+        </mat-form-field>
+      </div>
+    </mat-dialog-content>
 
-    
-
-  </mat-dialog-content>
-
-  <mat-dialog-actions fxLayoutAlign="end center">
-    <button mat-raised-button mat-dialog-close color="accent">Cancel</button>
-    <button mat-raised-button (click)="addNewEvent()" class="m-2" color="primary" type="button"
-      [disabled]="eventForm.invalid">{{isUpdate ? 'Update' : 'Add'}}</button>
-  </mat-dialog-actions>
-</form>
+    <mat-dialog-actions fxLayoutAlign="end center">
+      <button mat-raised-button mat-dialog-close color="accent">Cancel</button>
+      <button mat-raised-button (click)="addNewEvent()" class="m-2" color="primary" type="button"
+        [disabled]="eventForm.invalid">{{isUpdate ? 'Update' : 'Add'}}</button>
+    </mat-dialog-actions>
+  </form>
 </div>

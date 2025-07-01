@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
   Validators,
@@ -34,7 +33,7 @@ export class RegistrationComponent implements OnInit {
         password: ["", [Validators.required, Validators.minLength(6)]],
         confirmPassword: ["", Validators.required],
       },
-      {validator: this.checkConfirmPassword(),}
+      { validator: this.checkConfirmPassword() }
     );
   }
 
@@ -42,11 +41,9 @@ export class RegistrationComponent implements OnInit {
 
   checkConfirmPassword() {
     return (formGroup: FormGroup) => {
-      const password = formGroup.controls['password'];
-      const cpassword = formGroup.controls['confirmPassword'];
-      if (cpassword.errors &&
-        !cpassword.errors.passwordMismatch
-      ) {
+      const password = formGroup.controls["password"];
+      const cpassword = formGroup.controls["confirmPassword"];
+      if (cpassword.errors && !cpassword.errors.passwordMismatch) {
         return;
       }
       if (password.value === cpassword.value) {
@@ -63,18 +60,16 @@ export class RegistrationComponent implements OnInit {
     (this.newUser.email = this.registrationForm.value.email),
       (this.newUser.password = this.registrationForm.value.password);
 
-    // is user already exists
-    this.http
-      .get<any[]>(`http://localhost:3000/users?email=${this.newUser.email}`)
-      .subscribe((users) => {
-        if (users.length > 0) {
-          alert("Email already exists");
+    // if user already exists
+    this.dataService.getUser(this.newUser.email).subscribe((users) => {
+       if (users.length > 0) {
+          alert("Account already exists with this email");
         } else {
           this.dataService.createNewUser(this.newUser).subscribe(() => {
             alert("Registration successful");
             this.router.navigate(["home"]);
           });
         }
-      });
+    });
   }
 }

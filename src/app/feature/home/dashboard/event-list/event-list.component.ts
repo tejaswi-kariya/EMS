@@ -106,14 +106,14 @@ export class EventListComponent implements OnInit {
       });
   }
 
-  //get new id to create new event
+  // get prepopulated new id to create new event
   getBookingID(): Number {
     let array = this.dataSource.data;
     const sArray = array.sort((a, b) => a.id - b.id);
     return sArray[sArray.length - 1].id + 1;
   }
 
-  //view event details
+  // view event details
  /*  onView(data) {
     this.dialog
       .open(ViewEventComponent, {
@@ -125,8 +125,8 @@ export class EventListComponent implements OnInit {
       });
   } */
 
-  //to update existing event
-  onEdit(data) {
+  // Update existing event
+  onEdit(data: any) {
     this.isUpdate = true;
     let dialogData = {
       isUpdate: this.isUpdate,
@@ -142,8 +142,8 @@ export class EventListComponent implements OnInit {
       });
   }
 
-  //to delete event
-  onDelete(data) {
+  // Delete event
+  onDelete(data: any) {
     if (confirm('Are you sure you want to delete this event?')) {
       this.dataService.deleteEvent(data.id).subscribe(() => {
        this.getEvents();

@@ -1,20 +1,20 @@
 .toolbar-no-padding {
-  padding: 10 !important;
-  min-height: 36px; /* optional: standard toolbar height */
-  line-height: 56px;
+    padding: 10 !important;
+    min-height: 36px;
+    line-height: 56px;
 }
 
 .dialog-container {
-  margin: 10;
-  padding: 0;
+    margin: 10;
+    padding: 0;
 }
 
 ::ng-deep .mat-dialog-container {
-  padding: 0 !important;
-   border-radius: 8px;
+    padding: 0 !important;
+    border-radius: 8px;
 }
 
 .form-wrapper {
-  padding: 1.5rem;
-  padding-bottom: 2.5rem;
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
 }

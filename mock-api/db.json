@@ -32,9 +32,9 @@
     {
       "id": 2,
       "eventType": "Social Events",
-      "guest": "200",
-      "date": "2025-08-27T18:30:00.000Z",
-      "total": "4000"
+      "guest": "20",
+      "date": "2025-09-24T18:30:00.000Z",
+      "total": "4050"
     },
     {
       "id": 3,
@@ -58,18 +58,32 @@
       "id": 5
     },
     {
-      "eventType": "Test Event for Row 10",
-      "guest": "1",
-      "date": "2025-07-27T18:30:00.000Z",
-      "total": "100",
-      "id": 7
-    },
-    {
       "eventType": "Sports Event",
       "guest": "12",
       "date": "2025-07-25T18:30:00.000Z",
       "total": "1200",
       "id": 8
+    },
+    {
+      "eventType": "Reunion Event",
+      "guest": "50",
+      "date": "2025-10-24T18:30:00.000Z",
+      "total": "10000",
+      "id": 9
+    },
+    {
+      "eventType": "CrickBuzz Event",
+      "guest": "100",
+      "date": "2026-02-16T18:30:00.000Z",
+      "total": "20000",
+      "id": 10
+    },
+    {
+      "eventType": "Rockstar Event",
+      "guest": "12",
+      "date": "2025-07-27T18:30:00.000Z",
+      "total": "1002",
+      "id": 11
     }
   ]
 }

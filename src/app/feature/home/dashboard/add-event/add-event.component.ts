@@ -54,14 +54,13 @@ export class AddEventComponent implements OnInit {
     }
   }
 
-  //create new event
+  // Create & Update new event
   addNewEvent() {
     const formData = this.eventForm.value;
     formData.id = this.eventForm.controls["id"].value;
     if (this.isUpdate) {
       this.dataService.updateEvent(formData).subscribe({
-        next: (response) => {
-          console.log("Event updated:", response);
+        next: (_) => {
           this.dialogRef.close();
         },
         error: (err) => {
@@ -70,8 +69,7 @@ export class AddEventComponent implements OnInit {
       });
     } else {
       this.dataService.addEvent(formData).subscribe({
-        next: (response) => {
-          console.log("Event added:", response);
+        next: (_) => {
           this.dialogRef.close();
         },
         error: (err) => {
@@ -79,14 +77,5 @@ export class AddEventComponent implements OnInit {
         },
       });
     }
-  }
-
-  //event date format
-  updateEventDate() {
-    const formattedDate = this.datePipe.transform(
-      this.addEvent.date,
-      "dd/MM/yyyy"
-    );
-    this.addEvent.date = formattedDate;
   }
 }
