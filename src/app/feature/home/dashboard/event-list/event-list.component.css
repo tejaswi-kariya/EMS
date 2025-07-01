@@ -1,35 +1,25 @@
 table {
   width: 100%;
 }
+
 .mat-form-field {
   font-size: 14px;
   width: 100%;
 }
-.mat-column-id {
-  padding-left: 16px;
-  font-size: 16px;
-}
-.mat-column-type {
-  padding-left: 16px;
-  font-size: 14px;
-}
-.mat-column-guest {
-  padding-left: 16px;
-  font-size: 14px;
-}
-.mat-column-date {
-  padding-left: 16px;
-  font-size: 14px;
-}
-.mat-column-total {
-  padding-left: 16px;
-  font-size: 14px;
-}
-.mat-column-action {
-  padding-left: 16px;
-  font-size: 14px;
+
+.mat-icon {
+  font-size: 20px;
 }
 
- .mat-icon{
-    font-size: 20px;
-  }
+.event-column {
+  padding-right: 2%;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+    text-align: center;
+
+}
+
+.table-content {
+  text-align: center;
+}
