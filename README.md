@@ -13,7 +13,7 @@ This project was generated with
 - Node Version: 12.22.12
 - For mock API, used JSON server. Run 'npm install -g json-server@0.16.3'
 
-##Third party library
+## Third party library
 - Angular Material
 - Run command npm install '@angular/material@7.3.7'
 - Add below line changes in angular.json file
@@ -27,9 +27,16 @@ This project was generated with
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `'json-server --watch mock-api/db.json --port 3000'` to start sever.
+Run `json-server --watch mock-api/db.json --port 3000` to start sever.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Description
+
+Event management is the application of project management to the creation and development of the large scale events. An events refers to social gathering or activity, such as a festival, a ceremony and party. It is used to manage activity related to event.
+The objective of this application is to develop a system that effectively manages all the data relatd to the various events that takes place in the organization. The purpose is to maintaina centralized database of all evets related information.
+In this application user has to be register to access the application. Once he registered , he can login and access the application. After login, user can see events list. Also user can add events, update events, delete events.
+ 
+ 

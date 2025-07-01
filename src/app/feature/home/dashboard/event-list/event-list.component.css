@@ -12,12 +12,9 @@ table {
 }
 
 .event-column {
-  padding-right: 2%;
   font-size: 14px;
   font-weight: bold;
-  align-items: center;
-    text-align: center;
-
+  text-align: center;
 }
 
 .table-content {
