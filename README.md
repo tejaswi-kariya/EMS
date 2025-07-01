@@ -33,3 +33,8 @@ Run `'json-server --watch mock-api/db.json --port 3000'` to start sever.
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+
+## Login Registration Flow
+
+https://github.com/user-attachments/assets/32fb23b7-4859-45a6-8103-64c6ecc7fd51
+
