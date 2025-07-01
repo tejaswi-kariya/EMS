@@ -38,5 +38,15 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Event management is the application of project management to the creation and development of the large scale events. An events refers to social gathering or activity, such as a festival, a ceremony and party. It is used to manage activity related to event.
 The objective of this application is to develop a system that effectively manages all the data relatd to the various events that takes place in the organization. The purpose is to maintaina centralized database of all evets related information.
 In this application user has to be register to access the application. Once he registered , he can login and access the application. After login, user can see events list. Also user can add events, update events, delete events.
- 
- 
+
+## Login Registration Flow
+
+https://github.com/user-attachments/assets/32fb23b7-4859-45a6-8103-64c6ecc7fd51
+
+## Event List
+
+https://github.com/user-attachments/assets/6d551583-947a-482e-b149-c880b9491179
+
+
+
+
