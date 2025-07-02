@@ -6,7 +6,7 @@
 [badge-node]: https://img.shields.io/badge/Node-12.22.12-green
 [badge-mit]: https://img.shields.io/badge/license-MIT-blue.svg
 
-This project was generated with 
+This project is generated with 
 
 - [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 - Node Version: 12.22.12
@@ -16,13 +16,16 @@ This project was generated with
 - Angular Material
 - Run command npm install '@angular/material@7.3.7'
 - Add below line changes in angular.json file
-   - "styles": [
+  
+ ```
+ - "styles": [
          "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "src/styles.css"
 ]
+```
 - Import and export Material required module in  /share/custom-material.module.ts file
 
-## Stack
+## Features Used
 
 - Angular
 - Single page application (SPA)
@@ -40,16 +43,20 @@ This project was generated with
 
 ## Run the Project
 
-1. Install node module
-      Run `npm install` to install the dependancies.
+1. Install node module run:
+   ```
+   npm install` to install the dependancies.
+   ```
+2. Start the development server run:
+   ```
+   json-server --watch mock-api/db.json --port 3000` to start sever.
+   ```
 
-2. Start the development server
- 
-     Run `json-server --watch mock-api/db.json --port 3000` to start sever.
+3. Run the application run, the app will automatically reload if you change any of the source files.
 
-3. Run the application
-
-    Run `ng serve` for a application. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+   ```
+   ng serve` for a application. Navigate to 'http://localhost:4200/'
+   ```
 
 ## Description
 
@@ -58,12 +65,12 @@ The objective of this application is to develop a system that effectively manage
 
 This app covers following functionality:
 
-      - Registration
-      - Login/ Logout
-      - Add Event
-      - Modify Event
-      - View list of Event
-      - Delete Event
+  - Registration
+  - Login/ Logout
+  - Add Event
+  - Modify Event
+  - View list of Event
+  - Delete Event
 
 ## Login Registration Flow
 
