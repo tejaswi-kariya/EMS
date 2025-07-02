@@ -22,6 +22,22 @@ This project was generated with
 ]
 - Import and export Material required module in  /share/custom-material.module.ts file
 
+## Stack
+
+- Angular
+- Single page application (SPA)
+- Angular Material
+- Reactive Form
+- Auth Guard
+- RxJS 
+- Pipe
+- Services
+- Dependency Injection
+- Routing
+- HTML
+- CSS
+- JSON server
+
 ## Run the Project
 
 1. Install node module
