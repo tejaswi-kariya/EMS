@@ -8,16 +8,17 @@ import { EventListComponent } from "./event-list/event-list.component";
 import { DashboardComponent } from "./dashboard.component";
 import { AddEventComponent } from "./add-event/add-event.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ViewEventComponent } from './view-event/view-event.component';
 
 @NgModule({
-  declarations: [EventListComponent, DashboardComponent, AddEventComponent],
+  declarations: [EventListComponent, DashboardComponent, AddEventComponent, ViewEventComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
     ReactiveFormsModule,
   ],
-  entryComponents: [AddEventComponent],
+  entryComponents: [AddEventComponent, ViewEventComponent],
   providers: [],
 })
 export class DashboardModule {}

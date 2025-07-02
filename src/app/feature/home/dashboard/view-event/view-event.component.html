@@ -1,0 +1,30 @@
+<mat-toolbar mat-dialog-title color="primary" class="toolbar-no-padding">
+  <mat-toolbar-row>
+    <h2>Event Details</h2>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="form-wrapper">
+  <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <table border="0">
+      <tr>
+        <td>Event Type :</td>
+        <td>{{eventDetails.eventType}}</td>
+      </tr>
+      <tr>
+        <td>Number of Guest :</td>
+        <td>{{eventDetails.guest}}</td>
+      </tr>
+      <tr>
+        <td>Event Date :</td>
+        <td>{{eventDetails.date | date: 'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td>Total Amount :</td>
+        <td>{{eventDetails.total}}</td>
+      </tr>
+    </table>
+  </mat-dialog-content>
+   <mat-dialog-actions fxLayoutAlign="end center">
+      <button mat-raised-button mat-dialog-close color="primary">OK</button>
+    </mat-dialog-actions>
+</div>

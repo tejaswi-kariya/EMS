@@ -10,6 +10,7 @@ import {
 
 import { DataService } from "src/app/feature/data.service";
 import { AddEventComponent } from "../add-event/add-event.component";
+import { ViewEventComponent } from "../view-event/view-event.component";
 
 
 @Component({
@@ -114,7 +115,7 @@ export class EventListComponent implements OnInit {
   }
 
   // view event details
- /*  onView(data) {
+  onView(data) {
     this.dialog
       .open(ViewEventComponent, {
         data: data
@@ -123,7 +124,8 @@ export class EventListComponent implements OnInit {
       .subscribe((result) => {
         this.getEvents();
       });
-  } */
+  } 
+ 
 
   // Update existing event
   onEdit(data: any) {

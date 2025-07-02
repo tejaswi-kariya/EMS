@@ -54,6 +54,9 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell class="event-column" *matHeaderCellDef> Actions </th>
         <td mat-cell style="text-align: center;" *matCellDef="let element">
+          <button mat-icon-button color="primary" type="button" matTooltip="View Event" (click)="onView(element)">
+            <mat-icon>visibility</mat-icon>
+          </button>
           <button mat-icon-button color="primary" type="button" matTooltip="edit" (click)="onEdit(element)">
             <mat-icon>edit</mat-icon>
           </button>

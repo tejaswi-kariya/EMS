@@ -49,7 +49,7 @@ This project is generated with
    ```
 2. Start the development server run:
    ```
-   json-server --watch mock-api/db.json --port 3000` to start sever.
+   json-server --watch mock-api/db.json --port 3000
    ```
 
 3. Run the application run, the app will automatically reload if you change any of the source files.
@@ -71,6 +71,7 @@ This app covers following functionality:
   - Modify Event
   - View list of Event
   - Delete Event
+  - View Single Event
 
 ## Login Registration Flow
 
